@@ -1,0 +1,19 @@
+<% include _header %>
+
+<% if ((currentUser) && (currentUser.id === user.id)) { %>
+	<a href="/edit" class="pull-right">Edit your profile</a>
+<% } %>
+
+<h1><%= user.name() %></h1>
+<div class="alert alert-info fade in">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	<h2 >Joined on <%= user.createdAt %></h2>
+</div>
+
+
+
+<% if (user.bio) { %>
+<p><%= user.bio %></p>
+<% } %>
+
+<% include _footer %>

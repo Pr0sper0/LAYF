@@ -1,0 +1,28 @@
+<% include _header %>
+<div class="jumbotron text-center">
+  <h1>Welcome to Learn about Me</h1>
+  <p>Move forward to find Your Friends and YourSelf!</p>
+</div>
+
+<% users.forEach(function(user) { %>
+<div class="row">
+	<div class="col-sm-1">
+	<i class="glyphicon glyphicon-user"></i>
+	</div>
+	<div class="col-sm-10">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<a href="/users/<%= user.username %>">
+				<%= user.name() %>
+			</a>
+		</div>
+	<% if(user.bio) { %>
+		<div class="panel-body"><%= user.bio %></div>
+	<% } %>
+	</div>
+	</div>
+</div>
+<% }) %>
+
+<% include _footer %>
+
